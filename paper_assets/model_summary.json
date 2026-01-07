@@ -1,0 +1,25 @@
+{
+  "metrics": [
+    {
+      "model": "LogisticRegression",
+      "accuracy": 0.8587070646467677,
+      "macro_f1": 0.8160566269934664,
+      "balanced_accuracy": 0.8565286592963313,
+      "roc_auc": 0.9495870772517695,
+      "auprc": 0.9851254053598828
+    },
+    {
+      "model": "XGBoost",
+      "accuracy": 0.9380030998450077,
+      "macro_f1": 0.9163559671043927,
+      "balanced_accuracy": 0.9495970391385918,
+      "roc_auc": 0.9893521578215945,
+      "auprc": 0.9969988116088435
+    }
+  ],
+  "inference_ms_per_sample": {
+    "LogisticRegression": 7.470226330009974e-05,
+    "XGBoost": 0.002175949201562227
+  },
+  "process_footprint": {}
+}

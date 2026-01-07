@@ -9,3 +9,4 @@ if __name__ == "__main__":
     # Create and run application
     app = AURAKShuttlePredictor()
     app.mainloop()
+    

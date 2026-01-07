@@ -124,11 +124,18 @@ class ShuttlePredictorEngine:
         """Derive new features from existing columns."""
         df = df.copy()
         
-        # 1. Is_Rush_Hour: 7-9 AM and 17-19 PM
-        # Assuming time_of_day is float 0-23
-        df['is_rush_hour'] = df['time_of_day'].apply(
-            lambda x: 1 if (7 <= x <= 9) or (17 <= x <= 19) else 0
-        )
+        # 1. Is_Rush_Hour
+        # Check if time_of_day is numeric or categorical
+        if pd.api.types.is_numeric_dtype(df['time_of_day']):
+            # Numeric: 7-9 AM and 17-19 PM
+            df['is_rush_hour'] = df['time_of_day'].apply(
+                lambda x: 1 if (7 <= x <= 9) or (17 <= x <= 19) else 0
+            )
+        else:
+            # Categorical: Morning and Evening are rush hours
+            df['is_rush_hour'] = df['time_of_day'].apply(
+                lambda x: 1 if x in ['Morning', 'Evening'] else 0
+            )
         
         # 2. Is_Weekend: Saturday or Sunday
         weekend_days = ['Saturday', 'Sunday']
@@ -162,8 +169,15 @@ class ShuttlePredictorEngine:
             X, y, test_size=test_size, random_state=42, stratify=y
         )
         
-        categorical_features = ['route', 'day_of_week', 'traffic_condition', 'weather', 'special_event']
-        numerical_features = ['stop_distance_km', 'time_of_day', 'temperature_celsius', 'is_rush_hour', 'is_weekend']
+        # Dynamically determine if time_of_day is numeric or categorical
+        if pd.api.types.is_numeric_dtype(X_train['time_of_day']):
+            # Numeric time_of_day
+            categorical_features = ['route', 'day_of_week', 'traffic_condition', 'weather', 'special_event']
+            numerical_features = ['stop_distance_km', 'time_of_day', 'temperature_celsius', 'is_rush_hour', 'is_weekend']
+        else:
+            # Categorical time_of_day
+            categorical_features = ['route', 'day_of_week', 'time_of_day', 'traffic_condition', 'weather', 'special_event']
+            numerical_features = ['stop_distance_km', 'temperature_celsius', 'is_rush_hour', 'is_weekend']
         
         self.preprocessor = ColumnTransformer(
             transformers=[
