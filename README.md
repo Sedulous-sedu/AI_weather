@@ -262,8 +262,8 @@ If you use this work in your research, please cite:
 ```bibtex
 @inproceedings{author2026bus,
   title={Intelligent Bus Arrival Prediction Using Machine Learning: A Comparative Study},
-  author={[Your Name] and [Co-authors]},
-  booktitle={Proceedings of the International Conference on Engineering Research and Applications (ICERAI)},
+  author={Abin Raj Devarajan and Haseeb Abdul Mohammed and Khaled Abdulgader},
+  booktitle={Proceedings of the International Conference on Engineering Research and Applications (ICERAI 2026)},
   year={2026},
   organization={IEEE}
 }
@@ -297,8 +297,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **AURAK University** for providing campus shuttle timetables
-- **RAKTA** for public transport schedule data
+- **AURAK (American University of Ras Al-Khaimah)** for providing campus shuttle timetables
+- **RAKTA (Ras Al-Khaimah Transport Authority)** for public transport schedule data
 - **Scikit-Learn**, **XGBoost**, and **SHAP** communities for excellent ML tools
 - **CustomTkinter** for modern Python GUI framework
 
@@ -306,12 +306,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Principal Investigator**: [Your Name]  
-**Email**: [your.email@aurak.ac.ae]  
+**Principal Investigator**: Abin Raj Devarajan 
+**Email**: abinraj.devarajan@aurak.ac.ae  
 **GitHub**: [@Sedulous-sedu](https://github.com/Sedulous-sedu)
 
 **Research Supervisor**: Dr. Khaled Abdulgader  
-**Collaborator**: Haseeb [Last Name]
+**Collaborator**: Haseeb Abdul Mohammed
 
 ---
 
@@ -320,7 +320,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ICERAI 2026 Conference](https://icerai.org)
 - [Project Repository](https://github.com/Sedulous-sedu/AI_weather)
 - [Research Paper](./ICERAI_paper2.pdf)
-- [Live Demo](https://youtu.be/demo-video) *(if available)*
 
 ---
 
